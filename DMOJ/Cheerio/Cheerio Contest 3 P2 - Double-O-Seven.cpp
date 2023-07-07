@@ -8,37 +8,37 @@ int main()
     cin >> n;
     string s;
     cin >> s;
-    int opponents_ammo = 0, my_ammo = 0, my_score = 0;
+    int opp = 0, me = 0, score = 0;
     for (int i = 0; i < n; i++)
     {
         if (s[i] == 'R')
         {
-            opponents_ammo++;
-            if (my_ammo > 0)
+            opp++;
+            if (me > 0)
             {
-                my_ammo--;
-                my_score++;
+                me--;
+                score++;
             }
             else
             {
-                my_ammo++;
+                me++;
             }
         }
         else if (s[i] == 'B')
         {
-            my_ammo++;
+            me++;
         }
         else if (s[i] == 'F')
         {
-            if (opponents_ammo > 0)
-                opponents_ammo--;
+            if (opp > 0)
+                opp--;
             else
             {
-                my_ammo--;
-                my_score++;
+                me--;
+                score++;
             }
         }
     }
-    cout << my_score << endl;
+    cout << score << endl;
     return 0;
 }

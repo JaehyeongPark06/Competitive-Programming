@@ -7,20 +7,20 @@ def babbling(op):
     global res
     if op == 99:
         idx = int(input())
-        percentage = int(input())
-        split(idx - 1, percentage)
+        percent = int(input())
+        split(idx - 1, percent)
     elif op == 88:
         idx = int(input())
         join(idx - 1)
 
 
-def split(idx, percentage):
+def split(idx, percent):
     global res
     suf = res.copy()
-    if percentage == 0:
+    if percent == 0:
         return
-    l = round(res[idx] * (percentage / 100))
-    r = round(res[idx] * (100 - percentage) / 100)
+    l = round(res[idx] * (percent / 100))
+    r = round(res[idx] * (100 - percent) / 100)
     res[idx] = l
     res[idx + 1] = r
     for i in range(idx + 2, MAX):

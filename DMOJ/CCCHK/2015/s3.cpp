@@ -6,9 +6,7 @@ int main()
 {
     int r, c;
     cin >> r >> c;
-
     vector<vector<int>> matrix(r, vector<int>(c));
-
     for (int i = 0; i < r; i++)
     {
 
@@ -18,9 +16,7 @@ int main()
             cin >> matrix[i][j];
         }
     }
-
     map<int, pair<int, int>> crosses;
-
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
@@ -37,7 +33,6 @@ int main()
                 }
                 count++;
             }
-
             pair<int, int> coords = make_pair(i + 1, j + 1);
             crosses[count] = coords;
             count = 0;
