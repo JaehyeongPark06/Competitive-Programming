@@ -12,11 +12,8 @@ int main()
         cin >> b;
         for (int y = 0; y < b; y++)
         {
-            int c = b + y;
-            int d = b - y;
-            bool primec = true;
-            bool primed = true;
-
+            int c = b + y, d = b - y;
+            bool primec = true, primed = true;
             for (int z = 2; z <= sqrt(c); z++)
             {
                 if (c % z == 0)
