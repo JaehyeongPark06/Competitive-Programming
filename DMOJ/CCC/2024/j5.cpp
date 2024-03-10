@@ -148,7 +148,7 @@ int main()
     {
         V += vals[patch[A][B]];
     }
-    patch[A][B] = 'X';
+    patch[A][B] = '*';
 
     queue<pair<int, int>> q;
     q.push({A, B});
@@ -164,13 +164,13 @@ int main()
         {
             int nx = x + dir.first;
             int ny = y + dir.second;
-            if (nx >= 0 && nx < R && ny >= 0 && ny < C && patch[nx][ny] != '*' && patch[nx][ny] != 'X')
+            if (nx >= 0 && nx < R && ny >= 0 && ny < C && patch[nx][ny] != '*')
             {
                 if (vals.find(patch[nx][ny]) != vals.end())
                 {
                     V += vals[patch[nx][ny]];
                 }
-                patch[nx][ny] = 'X';
+                patch[nx][ny] = '*';
                 q.push({nx, ny});
             }
         }
